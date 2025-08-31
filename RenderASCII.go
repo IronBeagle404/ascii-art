@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-//go:embed ressources.txt
+//go:embed resources.txt
 var banner string
 
 func RenderASCIIToString(input string) string {

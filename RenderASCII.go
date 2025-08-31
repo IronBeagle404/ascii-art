@@ -9,15 +9,13 @@ import (
 var banner string
 
 func RenderASCIIToString(input string) string {
-
 	input = strings.ReplaceAll(input, "\\n", "\n")
 
 	bannerData := strings.Split(banner, "\n\n")
 
-	runes := []rune(input)
 	var final []string
 
-	for _, r := range runes {
+	for _, r := range input {
 		if r == '\n' {
 			final = append(final, "")
 		} else if int(r) >= 32 && int(r) <= 126 {

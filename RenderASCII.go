@@ -36,7 +36,7 @@ func RenderASCIIToString(input string) string {
 			j++
 		}
 
-		for line := 0; line < 8; line++ {
+		for line := range 8 {
 			var result []string
 			for k := i; k < j; k++ {
 				lineParts := strings.Split(final[k], "\n")

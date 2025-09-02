@@ -1,6 +1,6 @@
 # ASCII-ART
 
-This was originally a study project realized with @LeRacoune and @nathuc69 
+This was originally a study project realized with [LeRacoune](https://github.com/LeRacoune) and [nathuc69](https://github.com/nathuc69)
 
 We decided to publish it as a Go package to test the conversion process and make it available for others.
 

@@ -10,7 +10,9 @@ import (
 var fontFiles embed.FS
 
 var AvailableFonts = map[string]string{
-	"standard": "fonts/standard.txt",
+	"standard":   "fonts/standard.txt",
+	"shadow":     "fonts/shadow.txt",
+	"thinkertoy": "fonts/thinkertoy.txt",
 }
 
 func RenderASCIIToString(input string, font string) (string, error) {

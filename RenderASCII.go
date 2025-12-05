@@ -8,7 +8,8 @@ import (
 //go:embed resources.txt
 var banner string
 
-func RenderASCIIToString(input string) string {
+
+func RenderASCIIToString(input string) (string, error) {
 	input = strings.ReplaceAll(input, "\\n", "\n")
 
 	bannerData := strings.Split(banner, "\n\n")
@@ -55,5 +56,5 @@ func RenderASCIIToString(input string) string {
 		i = j
 	}
 
-	return builder.String()
+	return builder.String(), nil
 }

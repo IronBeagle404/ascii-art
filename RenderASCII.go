@@ -1,18 +1,32 @@
 package ascii_art
 
 import (
-	_ "embed"
+	"embed"
+	"fmt"
 	"strings"
 )
 
-//go:embed resources.txt
-var banner string
+//go:embed fonts/*
+var fontFiles embed.FS
 
+var AvailableFonts = map[string]string{
+	"standard": "fonts/standard.txt",
+}
 
-func RenderASCIIToString(input string) (string, error) {
+func RenderASCIIToString(input string, font string) (string, error) {
 	input = strings.ReplaceAll(input, "\\n", "\n")
 
-	bannerData := strings.Split(banner, "\n\n")
+	path, ok := AvailableFonts[font]
+	if !ok {
+		return "", fmt.Errorf("font %v does not exist", font)
+	}
+
+	fontBytes, err := fontFiles.ReadFile(path)
+	if err != nil {
+		return "", fmt.Errorf("font file %v is unreadable", path)
+	}
+
+	bannerData := strings.Split(string(fontBytes), "\n\n")
 
 	var final []string
 

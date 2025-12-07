@@ -1,3 +1,11 @@
+// package ascii-art provides ASCII rendering utilities
+//
+// Available fonts :
+//   - standard
+//   - shadow
+//   - thinkertoy
+//
+// Use asciiart.AvailableFonts to get the list programmatically
 package ascii_art
 
 import (

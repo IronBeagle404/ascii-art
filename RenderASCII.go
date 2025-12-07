@@ -23,6 +23,9 @@ var AvailableFonts = map[string]string{
 	"thinkertoy": "fonts/thinkertoy.txt",
 }
 
+// RenderASCIIToString renders text using the specified font.
+//
+// The font must be one of the built-in fonts (see package documentation). Passing an invalid font name returns an error.
 func RenderASCIIToString(input string, font string) (string, error) {
 	input = strings.ReplaceAll(input, "\\n", "\n")
 
